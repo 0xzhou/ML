@@ -46,4 +46,18 @@ def autoNorm(dataSet):
     ## tile()~瓦片函数
     normDataSet=dataSet-tile(minVals,(m,1))
     normDataSet=normDataSet/tile(ranges,(m,1))
-    return  normDataSet,ranges,minVals
+    return normDataSet,ranges,minVals
+
+def datingClassTest():
+    hoRatio=0.10
+    datingDataMat, datingLabels=file2matrix('datingTestSet.txt')
+    normMat, ranges, minVals=autoNorm(datingDataMat)
+    m=normMat.shape(0) #样本数
+    numTestVecs=int(m*hoRatio) #测试集
+    errorCount=0.0
+    for i in range(numTestVecs):
+        classifierResult=classify0(normMat[i,:], normMat[numTestVecs:m,:],
+                                   datingLabels[numTestVecs:m,3])
+
+
+
