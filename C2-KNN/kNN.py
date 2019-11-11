@@ -38,4 +38,12 @@ def file2matrix(filename):
         index+=1
     return returnMat,classLabelVector
 
-
+def autoNorm(dataSet):
+    minVals=dataSet.min(0) #返回每一列最小值
+    maxVals=dataSet.max(0) #返回每一列最大值
+    ranges=maxVals-minVals
+    normDataSet=zeros(shape(dataSet))
+    ## tile()~瓦片函数
+    normDataSet=dataSet-tile(minVals,(m,1))
+    normDataSet=normDataSet/tile(ranges,(m,1))
+    return  normDataSet,ranges,minVals
