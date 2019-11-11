@@ -31,8 +31,8 @@ def file2matrix(filename):
     classLabelVector=[]
     index=0
     for line in arrayOLines:
-        line=line.strip()
-        listFromLine=line.split('\t')
+        line=line.strip()#截取回车字符
+        listFromLine=line.split('\t')# 根据制表符，分割成列表元素
         returnMat[index,:]=listFromLine[0:3]
         classLabelVector.append(int(listFromLine[-1]))
         index+=1
