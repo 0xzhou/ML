@@ -7,6 +7,13 @@ def createDataSet():
     return group, labels
 
 def classify0(inX, dataSet, labels, k):
+    '''
+    :param inX: input vector/sample, need to be classified
+    :param dataSet: training data (many samples)
+    :param labels: output vector/type of samples
+    :param k: k neighbours
+    :return: type
+    '''
     #-----------Calculation of the distance----------------------
     dataSetSize=dataSet.shape[0] #number of samples in TraingSet
     diffMat=tile(inX, (dataSetSize,1))-dataSet # difference vector of inX with each samples
@@ -61,7 +68,8 @@ def datingClassTest():
         print("the classifier came back with: %d, the real answer is: %d"\
               %(classifierResult,datingLabels[i]))
         if (classifierResult!=datingLabels[i]): errorCount+=1.0
-    print("the total error rate is: %f" % (errorCount/float(numTestVecs))
+    print("the total error rate is: %f" % (errorCount/float(numTestVecs)))
+
 
 
 
