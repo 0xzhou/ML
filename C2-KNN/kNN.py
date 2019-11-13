@@ -1,5 +1,6 @@
 from numpy import * # was bedeutet *
 import operator
+from imp import reload
 
 def createDataSet():
     group = array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]]) #shape:(4,2)
@@ -51,6 +52,7 @@ def autoNorm(dataSet):
     ranges=maxVals-minVals
     normDataSet=zeros(shape(dataSet))
     ## tile()~瓦片函数
+    m=dataSet.shape[0]
     normDataSet=dataSet-tile(minVals,(m,1))
     normDataSet=normDataSet/tile(ranges,(m,1))
     return normDataSet,ranges,minVals
@@ -70,6 +72,18 @@ def datingClassTest():
         if (classifierResult!=datingLabels[i]): errorCount+=1.0
     print("the total error rate is: %f" % (errorCount/float(numTestVecs)))
 
+def classifyPerson():
+    resultList=['no at all','in small dose','in large dose']
+    #input() like cin>>
+    percentTats=float(input(
+        "percentage of time spent playing video games?"))
+    ffMiles=float(input("frequent flier miles earned per year?"))
+    iceCream=float(input("liters of ice cream consumed per year?"))
+    datingDataMat, datingLabels=file2matrix('datingTestSet2.txt')
+    normMat, ranges, minVals=autoNorm(datingDataMat)
+    inArr=array([ffMiles,percentTats,iceCream])
+    classifierResult=classify0(inArr-minVals/ranges,normMat,datingLabels,3)
+    print("You will probably like this person: ", resultList[classifierResult-1])
 
 
 
