@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982e8d32-f1df-4c39-a474-c35a4349c11d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/trees.py" afterDir="false" />
-    </list>
+    <list default="true" id="982e8d32-f1df-4c39-a474-c35a4349c11d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +46,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1271" />
-    <option name="width" value="1298" />
+    <option name="x" value="1266" />
+    <option name="width" value="1303" />
     <option name="height" value="1399" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -101,7 +99,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1017" y="0" width="1038" height="1119" extended-state="0" />
+    <frame x="1013" y="0" width="1042" height="1119" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.506" />
