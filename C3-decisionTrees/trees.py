@@ -24,10 +24,15 @@ def createDataSet():
     return dataSet, labels
 
 def splitDataSet(dataSet, axis, value):
+    '''
+    @dataSet: the dataset we'll split
+    @axis: the features
+    @value:
+    '''
     retdataSet=[]
     for featVec in dataSet:
         if featVec[axis]==value:
             reducedFeatVec=featVec[:axis]
-            reducedFeatVec.extend(featVec[axis+1:])
-            retdataSet.append(reducedFeatVec)
+            reducedFeatVec.extend(featVec[axis+1:]) # 将该样本的分类特征删除
+            retdataSet.append(reducedFeatVec)# 将该样本作为一个元素，添加到list中
     return retdataSet
