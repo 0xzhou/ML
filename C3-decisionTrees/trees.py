@@ -36,3 +36,10 @@ def splitDataSet(dataSet, axis, value):
             reducedFeatVec.extend(featVec[axis+1:]) # 将该样本的分类特征删除
             retdataSet.append(reducedFeatVec)# 将该样本作为一个元素，添加到list中
     return retdataSet
+
+def chooseBestFeatureToSplit(dataSet):
+    numFeatures=len(dataSet[0])-1
+
+def majorityCnt(classList):
+
+def createTree(dataSet, labels):
