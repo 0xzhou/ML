@@ -1,4 +1,5 @@
 from math import log
+import operator
 
 def calcShannonEnt(dataSet):
     numEntries=len(dataSet)
@@ -37,9 +38,31 @@ def splitDataSet(dataSet, axis, value):
             retdataSet.append(reducedFeatVec)# 将该样本作为一个元素，添加到list中
     return retdataSet
 
+
 def chooseBestFeatureToSplit(dataSet):
     numFeatures=len(dataSet[0])-1
+    baseEntropy=calcShannonEnt(dataSet)
+    bestIofoGain=0.0; bestFeature=-1
+    for i in range(numFeatures):
+        # Create unique list of class labels
+        featList=[example[i] for example in dataSet]
+        uniqueVals=set(featList)
+        newEntropy=0.0
+        # Calculate entropy for each split
+        for value in uniqueVals:
+            subDataSet==splitDataSet(dataSet,i,value)
+            prob=len(subDataSet)/float(len(dataSet))
+            newEntropy+=prob*calcShannonEnt(subDataSet)
+        infoGain=baseEntropy-newEntropy
+        # Find the best information gain
+        if (infoGain>bestIofoGain):
+            bestIofoGain=infoGain
+            bestFeature=i
+        return bestFeature
 
-def majorityCnt(classList):
 
-def createTree(dataSet, labels):
+
+
+#def majorityCnt(classList):
+
+#def createTree(dataSet, labels):
