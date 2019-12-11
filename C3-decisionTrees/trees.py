@@ -40,17 +40,17 @@ def splitDataSet(dataSet, axis, value):
 
 
 def chooseBestFeatureToSplit(dataSet):
-    numFeatures=len(dataSet[0])-1
+    numFeatures=len(dataSet[0])-1 #take the length of one sample, minus the labels= number of features
     baseEntropy=calcShannonEnt(dataSet)
     bestIofoGain=0.0; bestFeature=-1
-    for i in range(numFeatures):
+    for i in range(numFeatures): # from every features
         # Create unique list of class labels
-        featList=[example[i] for example in dataSet]
-        uniqueVals=set(featList)
+        featList=[example[i] for example in dataSet] # take the value of current feature of all samples in dataset
+        uniqueVals=set(featList) #cancle the repeated element to only one
         newEntropy=0.0
         # Calculate entropy for each split
         for value in uniqueVals:
-            subDataSet==splitDataSet(dataSet,i,value)
+            subDataSet=splitDataSet(dataSet,i,value)
             prob=len(subDataSet)/float(len(dataSet))
             newEntropy+=prob*calcShannonEnt(subDataSet)
         infoGain=baseEntropy-newEntropy
@@ -63,6 +63,15 @@ def chooseBestFeatureToSplit(dataSet):
 
 
 
-#def majorityCnt(classList):
+def majorityCnt(classList):
+    classCount={} # define a empty dictionaries
+    for vote in classList:
+        if vote not in classCount.keys(): classCount[vote]=0
+        classCount[vote]+=1
+    sortedClassCount=sorted(classCount.iteritems(),
+                            key=operator.itemgetter(1),reverse=True)
+    # @reverse: True-descending
+    return  sortedClassCount[0][0]
+
 
 #def createTree(dataSet, labels):
