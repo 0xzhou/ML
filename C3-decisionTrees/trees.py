@@ -21,7 +21,7 @@ def createDataSet():
              [1,0,'no'],
              [0,1,'no'],
              [0,1,'no']]
-    labels=['no surfacing','flippers']
+    labels=['no surfacing','flippers'] #the labels of features
     return dataSet, labels
 
 def splitDataSet(dataSet, axis, value):
@@ -71,7 +71,26 @@ def majorityCnt(classList):
     sortedClassCount=sorted(classCount.iteritems(),
                             key=operator.itemgetter(1),reverse=True)
     # @reverse: True-descending
-    return  sortedClassCount[0][0]
+    return sortedClassCount[0][0]
 
+def createTree(dataSet, labels):
+    # create a list of all the class labels in the data set
+    classList=[example[-1] for example in dataSet]
+    # Stop when all classes are equal-> 只存在一种分类，代表分类完全，可以结束
+    if classList.count(classList[0])==len(classList): # if all the class labels are same
+        return classList[0]
+    # when no more features to split, return majority
+    if len(dataSet[0])==1:
+        return majorityCnt(classList)
 
-#def createTree(dataSet, labels):
+    bestFeat=chooseBestFeatureToSplit(dataSet) # the int number at which the feature is
+    bestFeatLabel=labels[bestFeat]
+    myTree={bestFeatLabel:{}} # dictionary
+    del(labels[bestFeat])
+    featValues=[example[bestFeat] for example in dataSet]
+    uniqueVals=set(featValues)
+    for value in uniqueVals:
+        subLabels=labels[:]
+        myTree[bestFeatLabel][value]=createDataSet(splitDataSet(dataSet,bestFeat,value),subLabels)
+    return myTree
+
