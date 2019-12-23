@@ -85,10 +85,10 @@ def createTree(dataSet, labels):
 
     bestFeat=chooseBestFeatureToSplit(dataSet) # the int number at which the feature is
     bestFeatLabel=labels[bestFeat]
-    myTree={bestFeatLabel:{}} # dictionary
+    myTree={bestFeatLabel:{}} # define dictionary
     del(labels[bestFeat])
     featValues=[example[bestFeat] for example in dataSet]
-    uniqueVals=set(featValues)
+    uniqueVals=set(featValues) # 提高运算效率
     for value in uniqueVals:
         subLabels=labels[:]
         myTree[bestFeatLabel][value]=createDataSet(splitDataSet(dataSet,bestFeat,value),subLabels)
