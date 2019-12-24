@@ -1,5 +1,6 @@
 from math import log
 import operator
+import matplotlib.pyplot as plt
 
 def calcShannonEnt(dataSet):
     numEntries=len(dataSet)
@@ -93,4 +94,6 @@ def createTree(dataSet, labels):
         subLabels=labels[:]
         myTree[bestFeatLabel][value]=createDataSet(splitDataSet(dataSet,bestFeat,value),subLabels)
     return myTree
+
+
 
