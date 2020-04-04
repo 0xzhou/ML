@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="982e8d32-f1df-4c39-a474-c35a4349c11d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plot_trees.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trees.py" beforeDir="false" afterPath="$PROJECT_DIR$/trees.py" afterDir="false" />
-    </list>
+    <list default="true" id="982e8d32-f1df-4c39-a474-c35a4349c11d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +64,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1271" />
-    <option name="width" value="1298" />
-    <option name="height" value="1399" />
+    <option name="x" value="1272" />
+    <option name="width" value="1297" />
+    <option name="height" value="1398" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -103,6 +99,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
@@ -131,7 +128,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1017" y="0" width="1038" height="1119" extended-state="0" />
+    <frame x="1018" y="0" width="1037" height="1118" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.50549453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -144,7 +141,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.16174975" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.16191445" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
